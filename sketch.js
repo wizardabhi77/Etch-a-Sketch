@@ -7,10 +7,16 @@ function createSketchPad (size) {
     for (i=0; i < size**2; i++) {
         let card = document.createElement('div');
         card.setAttribute('class','cards');
-        card.textContent = 'I AM CARD' + i;
+        card.textContent = i+1;
+        card.addEventListener('mouseover', handleHover);
         container.appendChild(card);
         
     }
 }
 
+function handleHover (e) {
+    e.target.style.backgroundColor = 'blue';
+}
+
 createSketchPad(gridSize);
+
